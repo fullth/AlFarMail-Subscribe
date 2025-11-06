@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>AlFarMail 구독</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- 폰트: 메일 템플릿과 동일 계열 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="wrap" role="main" aria-labelledby="title">
+  <section class="hero">
+    <div class="brand">AlFarMail</div>
+    <p>매일 알고리즘 문제를 메일로 받아보세요</p>
+    <p>*오전/오후 8~9시 총 2회</p>
+  </section>
+
+  <section class="body">
+    <div class="card">
+      <div class="form" role="form" aria-describedby="hint">
+        <input id="email" type="email" class="input" placeholder="이메일 주소" autocomplete="email" />
+        <button id="btn" class="btn" onclick="submitEmail()">등록</button>
+      </div>
+      <div id="status" class="status" aria-live="polite"></div>
+      <div class="hint">
+        *제출 시 서버에 이메일 주소와 등록 시간이 저장됩니다.
+      </div>
+    </div>
+    <section style="margin-top:10px;text-align:center;">
+      <img src="static/example-mail.png" alt="메일 예시" style="max-width:100%;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.08);">
+    </section>
+  </section>
+
+  <footer class="footer">
+    AlFarMail | 알파메일(Algorithm Far Mail) - 멀리 가기 위한, 매일 알고리즘 메일
+  </footer>
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
