@@ -19,10 +19,10 @@ body {
     color: var(--text);
     font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Apple SD Gothic Neo, Malgun Gothic, sans-serif;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 24px;
-    min-height: 100vh;
+    padding-top: clamp(20px, 5vh, 60px);
 }
 
 .wrap {
@@ -60,7 +60,7 @@ body {
 
 .body {
     padding: 28px;
-    padding-top: 34px;
+    padding-top: clamp(20px, 2rem, 50px);
 }
 
 .card {
@@ -77,16 +77,74 @@ body {
     font-size: 22px;
 }
 
+.difficulty-section {
+    margin-bottom: 16px;
+}
+
+.difficulty-label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.difficulty-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    flex: 1;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-text {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    background: #fff;
+    border: 2px solid #dcdfe6;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    transition: all .2s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-text {
+    background: linear-gradient(135deg, var(--primary-a) 0%, var(--primary-b) 100%);
+    border-color: var(--primary-a);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.radio-option:hover .radio-text {
+    border-color: var(--primary-a);
+}
+
 .form {
     margin-top: 10px;
     display: flex;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .input {
-    flex: 1 1 280px;
-    min-width: 240px;
+    flex: 5;
     padding: 12px 14px;
     border: 1px solid #dcdfe6;
     border-radius: 10px;
@@ -102,7 +160,7 @@ body {
 }
 
 .btn {
-    flex: 0 0 auto;
+    flex: 1;
     background: linear-gradient(135deg, var(--primary-a) 0%, var(--primary-b) 100%);
     color: #fff;
     border: none;
@@ -155,65 +213,7 @@ body {
     color: #999;
 }
 
-@media (max-width: 768px) {
-    body {
-        padding: 16px;
-        align-items: flex-start;
-        padding-top: 20px;
-    }
-
-    .wrap {
-        border-radius: 12px;
-    }
-
-    .hero {
-        padding: 32px 20px;
-    }
-
-    .hero .brand {
-        padding: 8px 16px;
-        font-size: 15px;
-    }
-
-    .hero p {
-        font-size: 13px;
-    }
-
-    .body {
-        padding: 24px 20px;
-    }
-
-    .card {
-        padding: 16px;
-    }
-
-    .input {
-        min-width: 100%;
-        font-size: 16px;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 14px 18px;
-        font-size: 15px;
-    }
-}
-
 @media (max-width: 420px) {
-    body {
-        padding: 12px;
-        padding-top: 16px;
-    }
-
-    .hero {
-        padding: 28px 16px;
-    }
-
-    .body {
-        padding: 20px 16px;
-    }
-
-    .card {
-        padding: 14px;
-    }
+    .hero { padding: 28px 18px; }
+    .body { padding: 20px; }
 }

@@ -18,13 +18,30 @@
 
   <section class="body">
     <div class="card">
+      <div class="difficulty-section">
+        <label class="difficulty-label">난이도 선택</label>
+        <div class="difficulty-options">
+          <label class="radio-option">
+            <input type="radio" name="difficulty" value="브론즈" />
+            <span class="radio-text">🥉브론즈</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="difficulty" value="실버" />
+            <span class="radio-text">🥈실버</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="difficulty" value="골드" />
+            <span class="radio-text">🥇골드</span>
+          </label>
+        </div>
+      </div>
       <div class="form" role="form" aria-describedby="hint">
         <input id="email" type="email" class="input" placeholder="이메일 주소" autocomplete="email" />
         <button id="btn" class="btn" onclick="submitEmail()">등록</button>
       </div>
       <div id="status" class="status" aria-live="polite"></div>
       <div class="hint">
-        *제출 시 서버에 이메일 주소와 등록 시간이 저장됩니다.
+        *제출 시 서버에 이메일 주소, 난이도, 등록 시간이 저장됩니다.
       </div>
     </div>
     <section style="margin-top:10px;text-align:center;">

@@ -6,8 +6,19 @@ async function submitEmail() {
     const status = document.getElementById("status");
     const email = (input.value || "").trim();
 
+    // 선택된 난이도 가져오기
+    const difficultyRadio = document.querySelector('input[name="difficulty"]:checked');
+    const difficulty = difficultyRadio ? difficultyRadio.value : null;
+
     status.textContent = "";
     status.className = "status";
+
+    // 난이도 선택 여부 확인
+    if (!difficulty) {
+        status.textContent = "난이도를 선택해주세요.";
+        status.classList.add("err");
+        return;
+    }
 
     if (!email || !email.includes("@")) {
         status.textContent = "유효한 이메일을 입력하세요.";
@@ -23,10 +34,10 @@ async function submitEmail() {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email })
+            body: JSON.stringify({ email, difficulty })
         });
 
-        status.textContent = "구독이 완료되었습니다.";
+        status.textContent = `구독이 완료되었습니다. (난이도: ${difficulty})`;
         status.classList.add("ok");
         input.value = "";
     } catch (e) {
