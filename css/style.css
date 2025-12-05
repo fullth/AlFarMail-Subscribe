@@ -77,6 +77,66 @@ body {
     font-size: 22px;
 }
 
+.difficulty-section {
+    margin-bottom: 16px;
+}
+
+.difficulty-label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1a237e;
+    margin-bottom: 10px;
+}
+
+.difficulty-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.radio-option {
+    flex: 1;
+    min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.radio-text {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    background: #fff;
+    border: 2px solid #dcdfe6;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    transition: all .2s ease;
+}
+
+.radio-option input[type="radio"]:checked + .radio-text {
+    background: linear-gradient(135deg, var(--primary-a) 0%, var(--primary-b) 100%);
+    border-color: var(--primary-a);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.25);
+}
+
+.radio-option:hover .radio-text {
+    border-color: var(--primary-a);
+}
+
 .form {
     margin-top: 10px;
     display: flex;
