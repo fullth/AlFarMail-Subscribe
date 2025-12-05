@@ -22,7 +22,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     padding: 24px;
-    padding-top: 40px;
+    padding-top: clamp(20px, 5vh, 60px);
 }
 
 .wrap {
@@ -60,7 +60,7 @@ body {
 
 .body {
     padding: 28px;
-    padding-top: 34px;
+    padding-top: clamp(20px, 2rem, 50px);
 }
 
 .card {
