@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz4Pyli5uQOxlN4eznR0pCfziG_OAH6yIyf0dLTwmSXkhGfYM5mrDYf-AhXLL1lUDGc/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_a8BSGvy3PEW_JtoyYjkY7NqVk4ezCuzq3NKet_wmj-pJSgSe_5179zGzsx1zlOGa/exec"
 
 async function submitEmail() {
     const input = document.getElementById("email");
