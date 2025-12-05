@@ -8,10 +8,17 @@ async function submitEmail() {
 
     // 선택된 난이도 가져오기
     const difficultyRadio = document.querySelector('input[name="difficulty"]:checked');
-    const difficulty = difficultyRadio ? difficultyRadio.value : "브론즈";
+    const difficulty = difficultyRadio ? difficultyRadio.value : null;
 
     status.textContent = "";
     status.className = "status";
+
+    // 난이도 선택 여부 확인
+    if (!difficulty) {
+        status.textContent = "난이도를 선택해주세요.";
+        status.classList.add("err");
+        return;
+    }
 
     if (!email || !email.includes("@")) {
         status.textContent = "유효한 이메일을 입력하세요.";

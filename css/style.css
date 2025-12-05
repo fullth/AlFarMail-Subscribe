@@ -140,13 +140,12 @@ body {
 .form {
     margin-top: 10px;
     display: flex;
+    flex-direction: column;
     gap: 10px;
-    flex-wrap: wrap;
 }
 
 .input {
-    flex: 1 1 280px;
-    min-width: 240px;
+    width: 100%;
     padding: 12px 14px;
     border: 1px solid #dcdfe6;
     border-radius: 10px;
@@ -162,7 +161,7 @@ body {
 }
 
 .btn {
-    flex: 0 0 auto;
+    width: 100%;
     background: linear-gradient(135deg, var(--primary-a) 0%, var(--primary-b) 100%);
     color: #fff;
     border: none;
